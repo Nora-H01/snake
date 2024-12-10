@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+    background-color: #f0f0f0; /* Couleur de fond de la page */
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    #score {
+        font-size: 1.5em; /* Réduire la taille du texte */
+    }
+
+    #menu button, #controls button {
+        font-size: 16px; /* Réduire la taille des boutons */
+    }
+
+    #sound-controls {
+        width: 90%; /* Plus large pour les petits écrans */
+    }
+}
+
+#game-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: none; /* Pas de fond ici */
+    position: relative;
+}
+
+#score {
+    position: fixed;
+    top: 270px;
+    left: 50%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+#canvas-container {
+    position: relative;
+    width: 440px; /* Taille du canvas + taille des bordures */
+    height: 440px; /* Taille du canvas + taille des bordures */
+    background-image: url("/assets/images/herbeb.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 20px; /* Décalé par rapport aux bordures */
+    left: 20px; /* Décalé par rapport aux bordures */
+    width: 400px;
+    height: 400px;
+    background-color: transparent; /* Pas de fond, juste le contenu */
+}
+
+.border {
+    position: absolute;
+    background-size: cover;
+}
+
+#border-top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url("/assets/images/ba.png");
+}
+
+#border-bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url("/assets/images/bc.png");
+}
+
+#border-left {
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 100%;
+    background-image: url("/assets/images/bd.png");
+}
+
+#border-right {
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background-image: url("/assets/images/bb.png");
+}
+
+#pause-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    color: rgb(245, 203, 203);
+    background-color: rgba(245, 203, 203, 0.4);
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+/* Styles pour le menu principal */
+#menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("/assets/images/fond.png");
+    background-size: 230px;
+    border-radius: 10px;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+}
+
+#menu button {
+    background-color: rgba(205, 180, 180, 0.7);
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#controls {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(76, 74, 74, 0.6);
+    background-image: url("/assets/images/fondb.png");
+    background-position: 70% 110%;
+    background-size: 375px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    padding: 20px;
+    color: rgb(249, 217, 217);
+    font-family: Arial, sans-serif;
+}
+
+#controls p {
+    font-size: 18px;
+}
+
+#controls button {
+    background-color: rgba(205, 180, 180, 0.7);
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+#sound-controls {
+    position: fixed;
+    top: 53%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(244, 231, 231, .5);
+    padding: 6px;
+    z-index: 1000;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 200px;
+    display: none; /* Initially hidden */
+}
+
+/* #sound-controls p {
+    margin: 0 0 10px;
+} */
+
+#sound-controls input[type="range"] {
+    width: 100%;
+}
+
+#sound-controls button {
+    display: block;
+    margin: 10px auto 0;
+    padding: 10px 20px;
+    background: #63809f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* #sound-controls button:hover {
+    background: #0056b3;
+} */
+
